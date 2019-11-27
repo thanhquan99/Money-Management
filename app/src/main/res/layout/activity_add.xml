@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/edt_tien"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4.5"
+            android:hint="Nhap so tien"
+            ></EditText>
+        <TextView
+            android:layout_weight="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VND"
+            ></TextView>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spn_hang_muc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </Spinner>
+
+
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_gravity="center"></DatePicker>
+    <EditText
+        android:id="@+id/edt_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Time"
+        ></EditText>
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"></Button>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageButton
+            android:id="@+id/img_btn_vi_tien"
+            android:background="@drawable/ic_launcher_foreground"
+            android:layout_toLeftOf="@+id/img_btn_add"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            ></ImageButton>
+        <ImageButton
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:id="@+id/img_btn_add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            ></ImageButton>
+        <ImageButton
+            android:id="@+id/img_btn_chi_tieu"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_toRightOf="@+id/img_btn_add"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            ></ImageButton>
+    </RelativeLayout>
+
+</LinearLayout>

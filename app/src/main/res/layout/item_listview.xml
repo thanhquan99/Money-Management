@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_hang_muc"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        ></ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_hangmuc"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="An uong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ></TextView>
+        <TextView
+            android:id="@+id/tv_tien"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="20,000VND"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ></TextView>
+        <TextView
+            android:id="@+id/tv_time"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="18/11/2019"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ></TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
