@@ -1,15 +1,36 @@
 package com.example.quanlichitieu1.model;
 
-public class Contact {
+public class ChiTieu {
+    private int mID;
     private String mTien;
     private String mHangMuc,mTime;
     private int mViTriHangMuc;
 
-    public Contact(String mTien, String mHangMuc, String mTime, int mViTriHangMuc) {
+
+    public ChiTieu() {
+    }
+
+    public ChiTieu(int mID, String mTien, String mHangMuc, String mTime, int mViTriHangMuc) {
+        this.mID = mID;
         this.mTien = mTien;
         this.mHangMuc = mHangMuc;
         this.mTime = mTime;
         this.mViTriHangMuc = mViTriHangMuc;
+    }
+
+    public ChiTieu(String mTien, String mHangMuc, String mTime, int mViTriHangMuc) {
+        this.mTien = mTien;
+        this.mHangMuc = mHangMuc;
+        this.mTime = mTime;
+        this.mViTriHangMuc = mViTriHangMuc;
+    }
+
+    public int getmID() {
+        return mID;
+    }
+
+    public void setmID(int mID) {
+        this.mID = mID;
     }
 
     public String getmTien() {

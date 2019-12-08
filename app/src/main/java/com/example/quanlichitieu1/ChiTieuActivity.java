@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.quanlichitieu1.adapter.ContactAdapter;
-import com.example.quanlichitieu1.model.Contact;
+import com.example.quanlichitieu1.data.DBManager;
+import com.example.quanlichitieu1.model.ChiTieu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,9 @@ public class ChiTieuActivity extends AppCompatActivity implements View.OnClickLi
     ImageButton imgViTien,imgAdd,imgChiTieu;
     private ListView lvResult;
 
-    private List<Contact> arrayContact;
-    private ContactAdapter adapter;
+    private List<ChiTieu> chiTieuList;
+    private ContactAdapter contactAdapter;
+    public final DBManager dbManager = new DBManager(this);
 
 
     @Override
@@ -29,7 +31,21 @@ public class ChiTieuActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chi_tieu);
         Widget();
-        getData();
+        chiTieuList = dbManager.getAllChiTieu();
+        setAdapter();
+        lvResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ChiTieu chitieu =chiTieuList.get(position);
+                Intent intent = new Intent(ChiTieuActivity.this,DeleteUpdateActivity.class);
+                intent.putExtra(DeleteUpdateActivity.ID,chitieu.getmID());
+                intent.putExtra(DeleteUpdateActivity.TIEN,chitieu.getmTien());
+                intent.putExtra(DeleteUpdateActivity.HANG_MUC,chitieu.getmHangMuc());
+                intent.putExtra(DeleteUpdateActivity.VI_TRI_HANG_MUC,chitieu.getmViTriHangMuc());
+                intent.putExtra(DeleteUpdateActivity.TIME,chitieu.getmTime());
+                startActivity(intent);
+            }
+        });
     }
     public void Widget(){
         imgViTien = findViewById(R.id.img_btn_vi_tien);
@@ -40,9 +56,7 @@ public class ChiTieuActivity extends AppCompatActivity implements View.OnClickLi
         imgChiTieu.setOnClickListener(this);
         lvResult = findViewById(R.id.lv_result);
 
-        arrayContact = new ArrayList<>();
-        adapter = new ContactAdapter(this,R.layout.item_listview,arrayContact);
-        lvResult.setAdapter(adapter);
+
     }
 
     @Override
@@ -61,16 +75,14 @@ public class ChiTieuActivity extends AppCompatActivity implements View.OnClickLi
         }
 
     }
-    public void getData(){
-        Intent intent = getIntent();
-        int Tien = intent.getIntExtra(AddActivity.TIEN,0);
-        int ViTriHangMuc = intent.getIntExtra(AddActivity.VI_TRI_HANG_MUC,0);
-        String HangMuc = intent.getStringExtra(AddActivity.HANG_MUC);
-        String Time = intent.getStringExtra(AddActivity.TIME);
-        if(Tien != 0){
-            Contact contact = new Contact(Tien+"",HangMuc,Time,ViTriHangMuc);
-            arrayContact.add(contact);
-            adapter.notifyDataSetChanged();
+    public void setAdapter(){
+        if(contactAdapter==null){
+            contactAdapter = new ContactAdapter(this,R.layout.item_listview,chiTieuList);
+            lvResult.setAdapter(contactAdapter);
+        }else{
+            contactAdapter.notifyDataSetChanged();
+            lvResult.setSelection(contactAdapter.getCount()-1);
         }
     }
+
 }

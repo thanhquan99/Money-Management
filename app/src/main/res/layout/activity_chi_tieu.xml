@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="16dp"
+    android:background="@drawable/background"
     tools:context=".ChiTieuActivity">
     <TextView
         android:textStyle="bold"
@@ -26,7 +26,7 @@
         >
         <ImageButton
             android:id="@+id/img_btn_vi_tien"
-            android:background="@drawable/ic_launcher_foreground"
+            android:background="@drawable/home4"
             android:layout_toLeftOf="@+id/img_btn_add"
             android:layout_marginRight="20dp"
             android:layout_alignParentBottom="true"
@@ -34,6 +34,7 @@
             android:layout_height="50dp"
             ></ImageButton>
         <ImageButton
+            android:background="@drawable/cong1"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:id="@+id/img_btn_add"
@@ -42,7 +43,7 @@
             ></ImageButton>
         <ImageButton
             android:id="@+id/img_btn_chi_tieu"
-            android:background="@drawable/ic_launcher_background"
+            android:background="@drawable/baocao1"
             android:layout_toRightOf="@+id/img_btn_add"
             android:layout_marginLeft="20dp"
             android:layout_alignParentBottom="true"

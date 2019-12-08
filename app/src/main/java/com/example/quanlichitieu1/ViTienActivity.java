@@ -9,15 +9,20 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.quanlichitieu1.data.DBManager;
+
 public class ViTienActivity extends AppCompatActivity implements View.OnClickListener {
     TextView tvViTien,tvChiTieu,tvSoDu;
     ImageButton imgViTien,imgAdd,imgChiTieu;
+    public final DBManager dbManager = new DBManager(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vi_tien);
         Widget();
+        int tien = dbManager.getTongChiTieu();
+        tvChiTieu.setText(tien+" VND");
     }
     public void Widget(){
         tvChiTieu = findViewById(R.id.tv_chi_tieu);

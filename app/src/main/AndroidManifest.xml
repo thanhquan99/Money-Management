@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChiTieuActivity"></activity>
+        <activity android:name=".DeleteUpdateActivity"></activity>
+        <activity android:name=".ChiTieuActivity" />
         <activity android:name=".AddActivity" />
         <activity android:name=".ViTienActivity">
             <intent-filter>

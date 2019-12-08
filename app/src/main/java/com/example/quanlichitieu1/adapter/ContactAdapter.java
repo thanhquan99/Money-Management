@@ -12,17 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.quanlichitieu1.R;
-import com.example.quanlichitieu1.model.Contact;
+import com.example.quanlichitieu1.model.ChiTieu;
 
 import java.util.List;
 
-public class ContactAdapter extends ArrayAdapter<Contact> {
+public class ContactAdapter extends ArrayAdapter<ChiTieu> {
 
     private Context context;
     private int resource;
-    private List<Contact> arrayContact;
+    private List<ChiTieu> arrayContact;
 
-    public ContactAdapter(@NonNull Context context, int resource, @NonNull List<Contact> objects) {
+    public ContactAdapter(@NonNull Context context, int resource, @NonNull List<ChiTieu> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
@@ -47,19 +47,19 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        Contact contact = arrayContact.get(position);
+        ChiTieu contact = arrayContact.get(position);
         viewHolder.tvHangMuc.setText(contact.getmHangMuc());
         viewHolder.tvTime.setText(contact.getmTime());
         viewHolder.tvTien.setText(contact.getmTien());
         switch (contact.getmViTriHangMuc()){
             case 0:
-                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.ic_launcher_foreground);
+                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.anuong);
                 break;
             case 1:
-                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.ic_launcher_background);
+                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.giaitri);
                 break;
             case 2:
-                viewHolder.imgHangMuc.setBackgroundResource(R.mipmap.ic_launcher);
+                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.thethao);
                 break;
         }
 
