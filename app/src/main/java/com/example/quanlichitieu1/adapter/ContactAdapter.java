@@ -71,6 +71,7 @@ public class ContactAdapter extends ArrayAdapter<ChiTieu> {
     public class ViewHolder{
         ImageView imgHangMuc;
         TextView tvTien,tvHangMuc,tvTime;
+
     }
     public String HienThiTien(int tien){
         Locale localeVN= new Locale("vi","VN");

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background1"
+    android:background="@drawable/background2"
     tools:context=".DeleteUpdateActivity">
     <LinearLayout
         android:layout_margin="8dp"
@@ -62,12 +62,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"></Button>
-        <Button
+        <ImageButton
+            android:background="@drawable/thungrac"
             android:id="@+id/btn_delete"
+            android:layout_marginLeft="20dp"
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"></Button>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="Delete"></ImageButton>
     </LinearLayout>
 
 

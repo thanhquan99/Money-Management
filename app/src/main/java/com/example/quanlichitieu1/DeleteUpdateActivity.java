@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -27,7 +28,8 @@ public class DeleteUpdateActivity extends AppCompatActivity implements View.OnCl
     private DatePicker datePicker;
     private EditText edtTime,edtTien;
     private Spinner spnHangMuc;
-    private Button btnSave,btnDelete;
+    private Button btnSave;
+    ImageButton btnDelete;
     private ListView lvResult;
 
     private ContactAdapter contactAdapter;
