@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -76,14 +77,16 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.img_btn_chi_tieu:
-                Intent intent1 = new Intent(AddActivity.this,ChiTieuActivity.class);
+                Intent intent1 = new Intent(AddActivity.this,OptionActivity.class);
                 startActivity(intent1);
+                overridePendingTransition(R.anim.anim_enter_to_right,R.anim.anim_exit_to_right);
                 break;
             case R.id.img_btn_add:
                 break;
             case R.id.img_btn_vi_tien:
                 Intent intent2 = new Intent(AddActivity.this,ViTienActivity.class);
                 startActivity(intent2);
+                overridePendingTransition(R.anim.anim_enter_to_left,R.anim.anim_exit_to_left);
                 break;
             case R.id.btn_save:
                 ChiTieu chitieu = createChiTieu();
@@ -94,8 +97,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 }else{
                     Toast.makeText(this, "Nhap tien vao di ban oi", Toast.LENGTH_SHORT).show();
                 }
-//                chiTieuList.clear();
-//                chiTieuList.addAll(dbManager.getAllChiTieu());
                 break;
         }
 
@@ -114,7 +115,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         spnHangMuc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(AddActivity.this, spnHangMuc.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
                 ViTriHangMuc = position;
                 HangMuc = spnHangMuc.getItemAtPosition(position).toString();
             }
@@ -143,11 +143,14 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
 
     private ChiTieu createChiTieu(){
-        String tien = edtTien.getText().toString();
-        String time = edtTime.getText().toString();
-        if(Integer.parseInt(edtTien.getText().toString())==0){
+        if( TextUtils.isEmpty(edtTien.getText().toString())){
             return null;
         }
+        if(Integer.parseInt(edtTien.getText().toString())<=0 ){
+            return null;
+        }
+        String tien = edtTien.getText().toString();
+        String time = edtTime.getText().toString();
 
         ChiTieu chitieu = new ChiTieu(tien,HangMuc,time,ViTriHangMuc);
         return chitieu;

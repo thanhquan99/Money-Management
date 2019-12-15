@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background1"
-    tools:context=".ChiTieuActivity">
+    tools:context=".GiaiTriActivity">
+
     <TextView
         android:textStyle="bold"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="#ffffff"
         android:background="#800000"
-        android:text="Chi Tieu Hang Ngay"
+        android:text="Giai Tri"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ></TextView>
@@ -30,4 +31,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         ></Button>
+
 </LinearLayout>

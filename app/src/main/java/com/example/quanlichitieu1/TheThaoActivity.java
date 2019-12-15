@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -15,8 +14,7 @@ import com.example.quanlichitieu1.model.ChiTieu;
 
 import java.util.List;
 
-public class ChiTieuActivity extends AppCompatActivity  {
-
+public class TheThaoActivity extends AppCompatActivity {
     private Button btnBack;
     private ListView lvResult;
 
@@ -24,36 +22,22 @@ public class ChiTieuActivity extends AppCompatActivity  {
     private ContactAdapter contactAdapter;
     public final DBManager dbManager = new DBManager(this);
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chi_tieu);
+        setContentView(R.layout.activity_the_thao);
         Widget();
-        chiTieuList = dbManager.getAllChiTieu();
+        chiTieuList = dbManager.takeTheThao();
         setAdapter();
-        lvResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ChiTieu chitieu =chiTieuList.get(position);
-                Intent intent = new Intent(ChiTieuActivity.this,DeleteUpdateActivity.class);
-                intent.putExtra(DeleteUpdateActivity.ID,chitieu.getmID());
-                intent.putExtra(DeleteUpdateActivity.TIEN,chitieu.getmTien());
-                intent.putExtra(DeleteUpdateActivity.HANG_MUC,chitieu.getmHangMuc());
-                intent.putExtra(DeleteUpdateActivity.VI_TRI_HANG_MUC,chitieu.getmViTriHangMuc());
-                intent.putExtra(DeleteUpdateActivity.TIME,chitieu.getmTime());
-                startActivity(intent);
-                overridePendingTransition(R.anim.anim_enter_to_down,R.anim.anim_exit_to_down);
-            }
-        });
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(ChiTieuActivity.this,OptionActivity.class);
+                Intent intent1 = new Intent(TheThaoActivity.this,ViTienActivity.class);
                 startActivity(intent1);
                 overridePendingTransition(R.anim.anim_enter_to_up,R.anim.anim_exit_to_up);
             }
         });
+
     }
     public void Widget(){
         lvResult = findViewById(R.id.lv_result);
@@ -70,5 +54,4 @@ public class ChiTieuActivity extends AppCompatActivity  {
             lvResult.setSelection(contactAdapter.getCount()-1);
         }
     }
-
 }

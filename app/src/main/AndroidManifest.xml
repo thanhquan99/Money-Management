@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeleteUpdateActivity"></activity>
+        <activity android:name=".GiaiTriActivity"></activity>
+        <activity android:name=".TheThaoActivity" />
+        <activity android:name=".AnUongActivity" />
+        <activity android:name=".BieuDoActivity" />
+        <activity android:name=".OptionActivity" />
+        <activity android:name=".DeleteUpdateActivity" />
         <activity android:name=".ChiTieuActivity" />
         <activity android:name=".AddActivity" />
         <activity android:name=".ViTienActivity">

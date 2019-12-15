@@ -5,29 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background1"
-    tools:context=".ChiTieuActivity">
-    <TextView
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:background="#800000"
-        android:text="Chi Tieu Hang Ngay"
+    android:background="@drawable/backgroundchart"
+    tools:context=".BieuDoActivity">
+    <com.github.mikephil.charting.charts.PieChart
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ></TextView>
-    <ListView
-        android:layout_weight="0.5"
-        android:id="@+id/lv_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ></ListView>
+        android:layout_weight="25"
+        android:id="@+id/chart">
+
+    </com.github.mikephil.charting.charts.PieChart>
+
     <Button
         android:id="@+id/btn_back"
         android:layout_gravity="center"
         android:text="Trở về"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         ></Button>
+
 </LinearLayout>

@@ -14,7 +14,9 @@ import androidx.annotation.Nullable;
 import com.example.quanlichitieu1.R;
 import com.example.quanlichitieu1.model.ChiTieu;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ContactAdapter extends ArrayAdapter<ChiTieu> {
 
@@ -50,16 +52,16 @@ public class ContactAdapter extends ArrayAdapter<ChiTieu> {
         ChiTieu contact = arrayContact.get(position);
         viewHolder.tvHangMuc.setText(contact.getmHangMuc());
         viewHolder.tvTime.setText(contact.getmTime());
-        viewHolder.tvTien.setText(contact.getmTien());
+        viewHolder.tvTien.setText(HienThiTien(Integer.parseInt(contact.getmTien()))+" VND");
         switch (contact.getmViTriHangMuc()){
             case 0:
-                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.anuong);
+                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.anuong1);
                 break;
             case 1:
-                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.giaitri);
+                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.giaitri1);
                 break;
             case 2:
-                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.thethao);
+                viewHolder.imgHangMuc.setBackgroundResource(R.drawable.thethao1);
                 break;
         }
 
@@ -69,6 +71,13 @@ public class ContactAdapter extends ArrayAdapter<ChiTieu> {
     public class ViewHolder{
         ImageView imgHangMuc;
         TextView tvTien,tvHangMuc,tvTime;
+    }
+    public String HienThiTien(int tien){
+        Locale localeVN= new Locale("vi","VN");
+        NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+        String string = currencyVN.format(tien);
+        string = string.substring(1,string.length());
+        return string;
     }
 
 

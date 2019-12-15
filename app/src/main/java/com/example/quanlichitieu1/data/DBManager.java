@@ -102,5 +102,105 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
         return tien;
     }
+    public int getAnUong(){
+        String selectQuery = "Select " + TIEN +" From "+TABLE_NAME+" Where "+VITRIHANGMUC+" = 0";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        int tien = 0;
+        if(cursor.moveToFirst()){
+            do{
+                tien+=cursor.getInt(0);
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return tien;
+    }
+    public int getTheThao(){
+        String selectQuery = "Select " + TIEN +" From "+TABLE_NAME+" Where "+VITRIHANGMUC+" = 1";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        int tien = 0;
+        if(cursor.moveToFirst()){
+            do{
+                tien+=cursor.getInt(0);
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return tien;
+    }
+    public int getGiaiTri(){
+        String selectQuery = "Select " + TIEN +" From "+TABLE_NAME+" Where "+VITRIHANGMUC+" = 2";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        int tien = 0;
+        if(cursor.moveToFirst()){
+            do{
+                tien+=cursor.getInt(0);
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return tien;
+    }
+    public List<ChiTieu> takeAnUong(){
+        List<ChiTieu> chiTieuList = new ArrayList<>();
+        String selectQuery = "Select * From "+TABLE_NAME+ " Where "+VITRIHANGMUC+" =0";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if(cursor.moveToFirst()){
+            do{
+                ChiTieu chitieu = new ChiTieu();
+                chitieu.setmID(cursor.getInt(0));
+                chitieu.setmTien(cursor.getString(1));
+                chitieu.setmHangMuc(cursor.getString(2));
+                chitieu.setmViTriHangMuc(cursor.getInt(3));
+                chitieu.setmTime(cursor.getString(4));
+                chiTieuList.add(chitieu);
+
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return chiTieuList;
+    }
+    public List<ChiTieu> takeTheThao(){
+        List<ChiTieu> chiTieuList = new ArrayList<>();
+        String selectQuery = "Select * From "+TABLE_NAME+ " Where "+VITRIHANGMUC+" =2";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if(cursor.moveToFirst()){
+            do{
+                ChiTieu chitieu = new ChiTieu();
+                chitieu.setmID(cursor.getInt(0));
+                chitieu.setmTien(cursor.getString(1));
+                chitieu.setmHangMuc(cursor.getString(2));
+                chitieu.setmViTriHangMuc(cursor.getInt(3));
+                chitieu.setmTime(cursor.getString(4));
+                chiTieuList.add(chitieu);
+
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return chiTieuList;
+    }
+    public List<ChiTieu> takeGiaiTri(){
+        List<ChiTieu> chiTieuList = new ArrayList<>();
+        String selectQuery = "Select * From "+TABLE_NAME+ " Where "+VITRIHANGMUC+" =1";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if(cursor.moveToFirst()){
+            do{
+                ChiTieu chitieu = new ChiTieu();
+                chitieu.setmID(cursor.getInt(0));
+                chitieu.setmTien(cursor.getString(1));
+                chitieu.setmHangMuc(cursor.getString(2));
+                chitieu.setmViTriHangMuc(cursor.getInt(3));
+                chitieu.setmTime(cursor.getString(4));
+                chiTieuList.add(chitieu);
+
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return chiTieuList;
+    }
+
 
 }

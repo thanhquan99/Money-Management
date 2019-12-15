@@ -5,83 +5,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@drawable/background1"
 
     tools:context=".ViTienActivity">
 
     <TextView
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         android:gravity="center"
-        android:text="Ví Tiền Của Bạn"
+        android:text="Tình hình chi tiêu"
         android:textStyle="bold"
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></TextView>
-    <LinearLayout
-        android:layout_margin="8dp"
+
+
+    <TextView
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:textColor="#008080"
+        android:text="Σ 20.000VND"
+        android:id="@+id/tv_chi_tieu"
+        android:textSize="35sp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+    <LinearLayout
+        android:layout_margin="16dp"
         android:orientation="horizontal"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/btn_an_uong"
+            android:background="@drawable/anuong1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"></ImageButton>
         <TextView
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="Vi tien: "
+            android:id="@+id/tv_an_uong"
+            android:textColor="#2B1B17"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="20.000VND"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:id="@+id/tv_vi_tien"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></TextView>
+
     </LinearLayout>
+
     <LinearLayout
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:orientation="horizontal"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/btn_the_thao"
+            android:background="@drawable/thethao1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"></ImageButton>
         <TextView
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="Chi tieu: "
+            android:id="@+id/tv_the_thao"
+            android:textColor="#2B1B17"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="20.000VND"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:id="@+id/tv_chi_tieu"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></TextView>
+
     </LinearLayout>
+
     <LinearLayout
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:orientation="horizontal"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/btn_giai_tri"
+            android:background="@drawable/giaitri1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"></ImageButton>
         <TextView
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="So du: "
+            android:id="@+id/tv_giai_tri"
+            android:textColor="#2B1B17"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="20.000VND"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:id="@+id/tv_so_du"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></TextView>
+
     </LinearLayout>
+
+
     <RelativeLayout
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         >
         <ImageButton
             android:id="@+id/img_btn_vi_tien"
-            android:background="@drawable/home4"
+            android:background="@drawable/home2"
             android:layout_toLeftOf="@+id/img_btn_add"
             android:layout_marginRight="20dp"
             android:layout_alignParentBottom="true"

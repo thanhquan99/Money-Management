@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="20dp"
+
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
+        android:background="@drawable/anuong1"
         android:id="@+id/img_hang_muc"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         ></ImageView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/tv_hangmuc"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:text="An uong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            ></TextView>
+            android:layout_marginLeft="40dp"
+            android:gravity="left"
+            android:text="An uong"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/tv_tien"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:gravity="left"
             android:text="20,000VND"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            ></TextView>
-        <TextView
-            android:id="@+id/tv_time"
-            android:textStyle="bold"
+            android:textColor="#2B1B17"
             android:textSize="20sp"
-            android:gravity="center"
-            android:text="18/11/2019"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:textColor="#6F4E37"
+            android:id="@+id/tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            ></TextView>
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="6dp"
+            android:gravity="left"
+            android:text="18/11/2019"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
 
     </LinearLayout>
 

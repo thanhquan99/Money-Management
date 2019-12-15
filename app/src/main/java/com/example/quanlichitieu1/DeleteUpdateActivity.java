@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -84,11 +83,13 @@ public class DeleteUpdateActivity extends AppCompatActivity implements View.OnCl
                 dbManager.updateChiTieu(chitieu);
                 Intent intent = new Intent(DeleteUpdateActivity.this,ChiTieuActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.anim_enter_to_up,R.anim.anim_exit_to_up);
                 break;
             case R.id.btn_delete:
                 dbManager.deleteChiTieu(Id);
                 Intent intent1 = new Intent(DeleteUpdateActivity.this,ChiTieuActivity.class);
                 startActivity(intent1);
+                overridePendingTransition(R.anim.anim_enter_to_up,R.anim.anim_exit_to_up);
                 break;
 
         }
@@ -108,7 +109,6 @@ public class DeleteUpdateActivity extends AppCompatActivity implements View.OnCl
         spnHangMuc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(DeleteUpdateActivity.this, spnHangMuc.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
                 ViTriHangMuc = position;
                 HangMuc = spnHangMuc.getItemAtPosition(position).toString();
             }
